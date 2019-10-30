@@ -1,16 +1,50 @@
-fs = 5000;
-t = 0:1/fs:100;
-x = square(pi*t,25); %semnal dreptunghiular
+t1 = 0:0.002:100;
+x1 = square(pi*t1,25); %semnal dreptunghiular
                      %perioada 2s si factorul de umplere 25%
-
-for i = 1:1:length(x)
-   if x(i) > 0
-       x(i) = x(i)/2; %semnalul cu amplitudine pozitiva, se injumatateste, pentru a obtine nivel 
+for i = 1:1:length(x1)
+   if x1(i) > 0
+       x1(i) = x1(i)/2;%semnalul cu amplitudine pozitiva, se injumatateste, pentru a obtine nivel 
                          %maxim +0.5 si nivel minim -1.0
    end
 end
+subplot(3,1,1) %primul subgrafic
+plot(t1,x1)
+axis([0 5.2 -1.2 1.2])
+xlabel('Timp[secunde]')
+ylabel('Amplitudine')
+title('Semnal dreptunghiular')
 
-plot(t,x)
+
+
+t2 = 0:0.02:100;
+x2 = square(pi*t2,25); %semnal dreptunghiular
+                     %perioada 2s si factorul de umplere 25%
+for i = 1:1:length(x2)
+   if x2(i) > 0
+       x2(i) = x2(i)/2;%semnalul cu amplitudine pozitiva, se injumatateste, pentru a obtine nivel 
+                         %maxim +0.5 si nivel minim -1.0
+   end
+end
+subplot(3,1,2)  %al 2-lea subgrafic
+plot(t2,x2)
+axis([0 5.2 -1.2 1.2])
+xlabel('Timp[secunde]')
+ylabel('Amplitudine')
+title('Semnal dreptunghiular')
+
+
+
+t3 = 0:0.2:100;
+x3 = square(pi*t3,25); %semnal dreptunghiular
+                     %perioada 2s si factorul de umplere 25%
+for i = 1:1:length(x3)
+   if x3(i) > 0
+       x3(i) = x3(i)/2;%semnalul cu amplitudine pozitiva, se injumatateste, pentru a obtine nivel 
+                         %maxim +0.5 si nivel minim -1.0
+   end
+end
+subplot(3,1,3) %al 3-lea subgrafic 
+plot(t2,x2)
 axis([0 5.2 -1.2 1.2])
 xlabel('Timp[secunde]')
 ylabel('Amplitudine')
