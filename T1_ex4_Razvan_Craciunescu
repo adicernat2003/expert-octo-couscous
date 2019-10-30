@@ -3,7 +3,7 @@ t1=0:0.2:10;
 w=2*pi*0.333;
 s1=A*sin(w*t1);
 for i=1:1:length(s1);      
-    if s1(i)<0;
+    if s1(i)<0;  %daca alternantele sunt negative, le transformam intr-un semnal (continuu) nul
         s1(i)=0;
     end
 end
